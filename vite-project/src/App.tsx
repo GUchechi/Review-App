@@ -1,17 +1,31 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import "./App.css";
 import FeedbackForm from "./components/FeedbackForm/FeedbackForm";
 import ReviewStats from "./components/ReviewStats/ReviewStats";
+import AboutIconLink from "./components/AboutIconLink/AboutIconLink";
+import "./App.css";
+import About from "./components/About/About";
 
 function App() {
   return (
-    <>
+    <Router>
       <Header title="Review App" />
       <div className="container">
-        <FeedbackForm />
-        <ReviewStats />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <FeedbackForm />
+                <ReviewStats />
+              </>
+            }
+          />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <AboutIconLink />
       </div>
-    </>
+    </Router>
   );
 }
 
