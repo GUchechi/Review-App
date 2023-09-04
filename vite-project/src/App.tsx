@@ -3,8 +3,8 @@ import Header from "./components/Header/Header";
 import FeedbackForm from "./components/FeedbackForm/FeedbackForm";
 import ReviewStats from "./components/ReviewStats/ReviewStats";
 import AboutIconLink from "./components/AboutIconLink/AboutIconLink";
-import "./App.css";
 import About from "./components/About/About";
+import "./App.css";
 
 function App() {
   return (

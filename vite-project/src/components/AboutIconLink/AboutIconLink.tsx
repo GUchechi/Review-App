@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaQuestion } from "react-icons/fa";
+import './AboutIconLink.css'
 
 const AboutIconLink = () => {
   return (
