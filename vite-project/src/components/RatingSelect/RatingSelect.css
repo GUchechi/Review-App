@@ -34,7 +34,7 @@
 
 .rating li:hover,
 .num-display {
-  background: #201b1d;
+  background: #191d24;
   color: #fff;
 }
 
@@ -43,6 +43,6 @@
 }
 
 [type="radio"]:checked ~ label {
-  background: #ff6a95;
+  background: #191d24;
   color: #fff;
 }
