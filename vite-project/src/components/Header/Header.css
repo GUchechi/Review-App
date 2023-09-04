@@ -1,0 +1,15 @@
+header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  background-color: #191d24;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header__container {
+  max-width: 768px;
+  margin: auto;
+  padding: 0 20px;
+}
