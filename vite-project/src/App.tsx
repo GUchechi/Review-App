@@ -1,6 +1,7 @@
 import Header from "./components/Header/Header";
 import "./App.css";
 import FeedbackForm from "./components/FeedbackForm/FeedbackForm";
+import ReviewStats from "./components/ReviewStats/ReviewStats";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header title="Review App" />
       <div className="container">
         <FeedbackForm />
+        <ReviewStats />
       </div>
     </>
   );
