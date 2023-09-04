@@ -1,6 +1,7 @@
 import RatingSelect from "../RatingSelect/RatingSelect";
+import Button from "../shared/Button/Button";
 import Card from "../shared/Card/Card";
-import './FeedbackForm.css'
+import "./FeedbackForm.css";
 
 const FeedbackForm = () => {
   return (
@@ -15,9 +16,7 @@ const FeedbackForm = () => {
             placeholder="Write a review"
             // value={text}
           />
-          {/* <Button type="submit" isDisabled={btnDisabled}>
-            Send
-          </Button> */}
+          <Button type="submit">Send</Button>
         </div>
         {/* {message && <div className="message">{message}</div>} */}
       </form>
