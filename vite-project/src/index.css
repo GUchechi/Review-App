@@ -13,6 +13,12 @@ body {
   line-height: 1.6;
 }
 
+.container {
+  max-width: 768px;
+  margin: auto;
+  padding: 0 20px;
+}
+
 .card {
   background-color: #fff;
   color: #333;
@@ -32,3 +38,4 @@ body {
   font-weight: 600;
   text-align: center;
 }
+
