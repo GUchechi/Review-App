@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import Card from "../shared/Card/Card";
+import './About.css'
 
 
 const About = (): ReactElement => {
