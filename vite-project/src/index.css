@@ -39,6 +39,12 @@ body {
   text-align: center;
 }
 
+.message {
+  padding-top: 10px;
+  text-align: center;
+  color: red;
+}
+
 
 @media (max-width: 600px) {
   .rating li {
