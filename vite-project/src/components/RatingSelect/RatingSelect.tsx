@@ -1,12 +1,16 @@
 import { ChangeEvent, useState } from "react";
 import "./RatingSelect.css";
 
-function RatingSelect() {
+type RatingSelectProps = {
+  select: (rating: number) => void;
+};
+
+function RatingSelect({ select }: RatingSelectProps) {
   const [selected, setSelected] = useState<number>(1);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSelected(+e.currentTarget.value);
-    // select(+e.currentTarget.value);
+    select(+e.currentTarget.value);
   };
 
   return (
