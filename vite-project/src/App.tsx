@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import FeedbackForm from "./components/FeedbackForm/FeedbackForm";
+import FeedbackForm from "./components/ReviewForm/ReviewForm";
 import ReviewStats from "./components/ReviewStats/ReviewStats";
 import AboutIconLink from "./components/AboutIconLink/AboutIconLink";
 import About from "./components/About/About";
 import "./App.css";
+import ReviewList from "./components/ReviewList/ReviewList";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <>
                 <FeedbackForm />
                 <ReviewStats />
+                <ReviewList />
               </>
             }
           />

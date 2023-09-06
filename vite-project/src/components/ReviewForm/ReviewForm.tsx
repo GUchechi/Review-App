@@ -2,9 +2,9 @@ import { ChangeEvent, useState } from "react";
 import RatingSelect from "../RatingSelect/RatingSelect";
 import Button from "../shared/Button/Button";
 import Card from "../shared/Card/Card";
-import "./FeedbackForm.css";
+import "./ReviewForm.css";
 
-const FeedbackForm = () => {
+const ReviewForm = () => {
   const [text, setText] = useState<string>("");
   const [rating, setRating] = useState();
   const [btnDisabled, setBtnDisabled] = useState<boolean>(true);
@@ -48,4 +48,4 @@ const FeedbackForm = () => {
   );
 };
 
-export default FeedbackForm;
+export default ReviewForm;
