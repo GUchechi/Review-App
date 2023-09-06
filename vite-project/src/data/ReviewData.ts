@@ -1,10 +1,10 @@
-interface FeedbackDataTypes {
+interface ReviewDataTypes {
   id: number;
   rating: number;
   text: string;
 }
 
-const FeedbackData: FeedbackDataTypes[] = [
+const ReviewData: ReviewDataTypes[] = [
   {
     id: 1,
     rating: 10,
@@ -32,4 +32,4 @@ const FeedbackData: FeedbackDataTypes[] = [
   },
 ];
 
-export default FeedbackData;
+export default ReviewData;
