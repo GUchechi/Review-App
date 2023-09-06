@@ -18,7 +18,7 @@ const ReviewContext = createContext<ReviewContextType | undefined>(
 
 type ChildrenType = { children?: ReactElement | ReactElement[] };
 
-export const ReviewProvide = ({ children }: ChildrenType): ReactElement => {
+export const ReviewProvider = ({ children }: ChildrenType): ReactElement => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [review, setReview] = useState<ReviewItem[]>([]);
 
