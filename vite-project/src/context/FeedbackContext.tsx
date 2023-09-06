@@ -8,8 +8,8 @@ type FeedbackItem = {
 
 type FeedbackContextType = {
   feedback: FeedbackItem[];
-  isLoading: boolean; // Include isLoading in the context type
-  addFeedback: (newFeedback: FeedbackItem) => Promise<void>; //
+  isLoading: boolean;
+  addFeedback: (newFeedback: FeedbackItem) => Promise<void>;
 };
 
 const FeedbackContext = createContext<FeedbackContextType | undefined>(
