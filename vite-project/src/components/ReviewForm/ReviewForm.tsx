@@ -28,9 +28,19 @@ const ReviewForm = () => {
     setText(newText);
   };
 
+  // handleSubmit
+  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (text.trim().length > 10) {
+      const newReview = { text, rating };
+      addReview(newReview);
+      setText("");
+    }
+  };
+
   return (
     <Card>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>How would you rate your service with us?</h2>
         <RatingSelect select={(rating) => setRating(rating)} />
         <div className="input-group">

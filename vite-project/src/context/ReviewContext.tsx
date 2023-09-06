@@ -26,29 +26,40 @@ export const ReviewProvider = ({ children }: ChildrenType): ReactElement => {
   }, []);
 
   const fetchReview = async () => {
-    const response = await fetch(
-      `http://localhost:5000/review?_sort=id&_order=desc`
-    );
-    const data: ReviewItem[] = await response.json();
-    setReview(data);
-    setIsLoading(false);
+    try {
+      const response = await fetch(
+        `http://localhost:3000/review?_sort=id&_order=desc`
+      );
+      const data: ReviewItem[] = await response.json();
+      setReview(data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   //AddReview
   const addReview = async (newReview: ReviewItem) => {
-    const response = await fetch(
-      `http://localhost:5000/review?_sort=id&_order=desc`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newReview),
-      }
-    );
+    try {
+      const response = await fetch(
+        `http://localhost:3000/review?_sort=id&_order=desc`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newReview),
+        }
+      );
 
-    const data: ReviewItem = await response.json();
-    setReview([data, ...review]);
+      if (!response.ok) {
+        throw new Error("Failed to add a review");
+      }
+
+      const data: ReviewItem = await response.json();
+
+      setReview([data, ...review]);
+    } catch (error) {
+      console.error("Error adding review:", error);
+    }
   };
 
   return (
