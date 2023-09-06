@@ -1,10 +1,12 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useContext, useState } from "react";
 import RatingSelect from "../RatingSelect/RatingSelect";
 import Button from "../shared/Button/Button";
 import Card from "../shared/Card/Card";
 import "./ReviewForm.css";
+import ReviewContext from "../../context/ReviewContext";
 
 const ReviewForm = () => {
+  const { addReview } = useContext(ReviewContext);
   const [text, setText] = useState<string>("");
   const [rating, setRating] = useState();
   const [btnDisabled, setBtnDisabled] = useState<boolean>(true);
