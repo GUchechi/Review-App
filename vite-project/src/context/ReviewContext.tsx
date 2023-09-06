@@ -12,9 +12,7 @@ type ReviewContextType = {
   addReview: (newReview: ReviewItem) => Promise<void>;
 };
 
-const ReviewContext = createContext<ReviewContextType | undefined>(
-  undefined
-);
+const ReviewContext = createContext<ReviewContextType | undefined>(undefined);
 
 type ChildrenType = { children?: ReactElement | ReactElement[] };
 
@@ -32,7 +30,7 @@ export const ReviewProvider = ({ children }: ChildrenType): ReactElement => {
       `http://localhost:5000/review?_sort=id&_order=desc`
     );
     const data: ReviewItem[] = await response.json();
-    console.log(data);
+    setReview(data);
     setIsLoading(false);
   };
 
