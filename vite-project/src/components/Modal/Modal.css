@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,11 +13,23 @@
 
 .modal-content {
   background-color: white;
-  padding: 20px;
+  padding: 40px;
   border-radius: 5px;
   text-align: center;
 }
 
-button {
-  margin: 5px;
+.modal__button {
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #191d24;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+.modal__button:hover {
+  transform: scale(0.98);
+  opacity: 0.9;
 }

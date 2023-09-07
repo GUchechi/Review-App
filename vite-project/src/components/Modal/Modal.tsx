@@ -20,8 +20,8 @@ const Modal: React.FC<ModalProps> = ({
     <div className="modal">
       <div className="modal-content">
         <p>{message}</p>
-        <button onClick={onCancel}>Cancel</button>
-        <button onClick={onConfirm}>Confirm</button>
+        <button className="modal__button" onClick={onConfirm}>Confirm</button>
+        <button className="modal__button" onClick={onCancel}>Cancel</button>
       </div>
     </div>
   );

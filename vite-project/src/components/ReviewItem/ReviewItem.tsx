@@ -13,7 +13,7 @@ type ReviewItemProps = {
 };
 
 const ReviewItem = ({ item }: { item: ReviewItemProps }) => {
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState<boolean>(false);
   const { editReview, deleteReview } = useContext(ReviewContext);
 
   const handleDeleteClick = () => {
