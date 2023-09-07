@@ -12,11 +12,11 @@ type ReviewItemProps = {
 };
 
 const ReviewItem = ({ item }: { item: ReviewItemProps }) => {
-  const { editReview } = useContext(ReviewContext);
+  const { editReview, deleteReview } = useContext(ReviewContext);
   return (
     <Card>
       <div className="num-display">{item.rating}</div>
-      <button className="close">
+      <button className="close" onClick={() => deleteReview(item.id)}>
         <FaTimes color="purple" />
       </button>
       <button className="edit" onClick={() => editReview(item)}>

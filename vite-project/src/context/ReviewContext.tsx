@@ -14,6 +14,7 @@ type ReviewContextType = {
   editReview: (item: ReviewItem) => void;
   addReview: (newReview: ReviewItem) => Promise<void>;
   updateReview: (id: number, updItem: ReviewItem) => void;
+  deleteReview: (id: number) => void;
 };
 
 const ReviewContext = createContext<ReviewContextType | undefined>(undefined);
@@ -105,6 +106,25 @@ export const ReviewProvider = ({ children }: ChildrenType): ReactElement => {
     }
   };
 
+  // Delete Review
+  const deleteReview = async (id: number) => {
+    if (window.confirm("Are you sure you want to delete?")) {
+      try {
+        const response = await fetch(`http://localhost:3000/review/${id}`, {
+          method: "DELETE",
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to delete the review");
+        }
+
+        setReview(review.filter((item) => item.id !== id));
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+
   return (
     <ReviewContext.Provider
       value={{
@@ -116,6 +136,7 @@ export const ReviewProvider = ({ children }: ChildrenType): ReactElement => {
         editReview,
         setReviewEdit,
         updateReview,
+        deleteReview,
       }}
     >
       {children}
