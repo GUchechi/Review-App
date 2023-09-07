@@ -1,14 +1,14 @@
 import React from "react";
 import './Modal.css'
 
-type CustomModalProps = {
+type ModalProps = {
   isOpen: boolean;
   message: string;
   onCancel: () => void;
   onConfirm: () => void;
 };
 
-const CustomModal: React.FC<CustomModalProps> = ({
+const Modal: React.FC<ModalProps> = ({
   isOpen,
   message,
   onCancel,
@@ -27,4 +27,4 @@ const CustomModal: React.FC<CustomModalProps> = ({
   );
 };
 
-export default CustomModal;
+export default Modal;
