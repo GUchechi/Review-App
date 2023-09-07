@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext, useState } from "react";
+import { ChangeEvent, useContext, useEffect, useState } from "react";
 import RatingSelect from "../RatingSelect/RatingSelect";
 import Button from "../shared/Button/Button";
 import Card from "../shared/Card/Card";
@@ -6,7 +6,7 @@ import "./ReviewForm.css";
 import ReviewContext from "../../context/ReviewContext";
 
 const ReviewForm = () => {
-  const { addReview } = useContext(ReviewContext);
+  const { addReview, reviewEdit, updateReview } = useContext(ReviewContext);
   const [text, setText] = useState<string>("");
   const [rating, setRating] = useState();
   const [btnDisabled, setBtnDisabled] = useState<boolean>(true);
@@ -33,10 +33,25 @@ const ReviewForm = () => {
     e.preventDefault();
     if (text.trim().length > 10) {
       const newReview = { text, rating };
-      addReview(newReview);
+
+      if (reviewEdit.edit === true) {
+        updateReview(reviewEdit.item.id, newReview);
+      } else {
+        addReview(newReview);
+      }
+
       setText("");
     }
   };
+
+  // EditReview
+  useEffect(() => {
+    if (reviewEdit.edit === true) {
+      setBtnDisabled(false);
+      setText(reviewEdit.item.text);
+      setRating(reviewEdit.item.rating);
+    }
+  }, [reviewEdit]);
 
   return (
     <Card>
