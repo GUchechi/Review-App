@@ -6,8 +6,36 @@ type ReviewItem = {
   text: string;
 };
 
+
 type ReviewContextType = {
-  review: ReviewItem[];
+  review: ReviewItem[ReviewDataTypes[] = [
+  {
+    id: 1,
+    rating: 10,
+    text: "This is feedback item 1",
+  },
+  {
+    id: 2,
+    rating: 9,
+    text: "This is feedback item 2",
+  },
+  {
+    id: 3,
+    rating: 7,
+    text: "This is feedback item 3",
+  },
+  {
+    id: 4,
+    rating: 8,
+    text: "This is feedback item 4",
+  },
+  {
+    id: 5,
+    rating: 5,
+    text: "This is feedback item 5",
+  },
+];
+];
   reviewEdit: { item: ReviewItem; edit: boolean };
   isLoading: boolean;
   error: string | null;
@@ -26,7 +54,7 @@ export const ReviewProvider = ({ children }: ChildrenType): ReactElement => {
   const [review, setReview] = useState<ReviewItem[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [reviewEdit, setReviewEdit] = useState({
-    item: {},
+    item: { id: 0, rating: 0, text: "" },
     edit: false,
   });
 
@@ -98,7 +126,7 @@ export const ReviewProvider = ({ children }: ChildrenType): ReactElement => {
 
       // FIX: this fixes being able to add a review after editing
       setReviewEdit({
-        item: {},
+        item: { id: 0, rating: 0, text: "" },
         edit: false,
       });
     } catch (error) {
@@ -132,7 +160,6 @@ export const ReviewProvider = ({ children }: ChildrenType): ReactElement => {
         addReview,
         reviewEdit,
         editReview,
-        setReviewEdit,
         updateReview,
         deleteReview,
       }}

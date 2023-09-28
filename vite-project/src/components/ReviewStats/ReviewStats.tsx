@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./ReviewStats.css";
-import ReviewContext from "../../context/ReviewContext";
+import ReviewContext from "../../context/ReviewContext.ts";
 
 
 const ReviewStats = () => {

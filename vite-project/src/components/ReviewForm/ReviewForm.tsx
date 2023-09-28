@@ -8,7 +8,7 @@ import ReviewContext from "../../context/ReviewContext";
 const ReviewForm = () => {
   const { addReview, reviewEdit, updateReview } = useContext(ReviewContext);
   const [text, setText] = useState<string>("");
-  const [rating, setRating] = useState();
+  const [rating, setRating] = useState<number>();
   const [btnDisabled, setBtnDisabled] = useState<boolean>(true);
   const [message, setMessage] = useState<string | null>("");
 
